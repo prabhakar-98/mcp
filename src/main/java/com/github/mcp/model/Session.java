@@ -1,21 +1,21 @@
 package com.github.mcp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
+
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Session")
 public class Session {
+    @Id
     String sessionID;
 
     @ManyToOne
-    @JoinColumn(name = "userId", referencedColumnName = "userID")  // foreign key
+    @JoinColumn(name = "userId", referencedColumnName = "userId")  // foreign key
     private User user;
+
     long lastAccessTime;
     @CreatedDate
     private LocalDateTime createdAt;

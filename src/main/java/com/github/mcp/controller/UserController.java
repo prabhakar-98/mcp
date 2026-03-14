@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -19,7 +20,7 @@ public class UserController {
     private SessionRepository sessionRepository;
 
     @GetMapping("api/v1/user")
-    public ResponseEntity<ApiResponse<User>> createUser(@PathVariable("state") String state, @PathVariable("code") String code)
+    public ResponseEntity<ApiResponse<User>> createUser(@RequestParam("state") String state, @RequestParam("code") String code)
     {
         //api call to github for token
         // then user

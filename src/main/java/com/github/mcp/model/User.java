@@ -1,14 +1,16 @@
 package com.github.mcp.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "User")
+@Table(name = "Users")
 public class User {
+    @Id
     private String userID;
     private String name;
     private String emailId;
